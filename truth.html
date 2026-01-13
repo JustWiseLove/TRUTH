@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Did You Know… - Truths We Love to Teach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --text-light: #d8d8d8;
+      --text-muted: #888;
+      --gold: #ffd700;
+      --green: #00aa00;
+      --section-odd-bg: rgba(0, 170, 0, 0.08);
+      --section-even-bg: rgba(255, 215, 0, 0.08);
+      --separator: rgba(255,215,0,0.15);
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    header {
+      background: #000;
+      color: var(--gold);
+      text-align: center;
+      padding: 140px 20px 90px;
+    }
+    h1 {
+      font-family: 'Audiowide', cursive;
+      font-size: 7.5rem;
+      margin: 0;
+      letter-spacing: 10px;
+      text-shadow: 0 0 20px rgba(255,215,0,0.4);
+    }
+    .tagline {
+      font-size: 2.2rem;
+      margin-top: 20px;
+      color: var(--green);
+    }
+    .main-link {
+      display: block;
+      margin: 30px auto 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--green);
+      text-decoration: none;
+    }
+    .main-link:hover {
+      color: var(--gold);
+    }
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .category {
+      margin: 100px 0;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .odd-category {
+      background: var(--section-odd-bg);
+    }
+    .even-category {
+      background: var(--section-even-bg);
+    }
+    hr.separator {
+      border: none;
+      height: 2px;
+      margin: 80px auto;
+      width: 60%;
+      background: linear-gradient(to right, transparent, var(--separator), transparent);
+    }
+    .odd-category hr.separator { background: linear-gradient(to right, transparent, var(--green), transparent); }
+    .even-category hr.separator { background: linear-gradient(to right, transparent, var(--gold), transparent); }
+    h2 {
+      font-size: 2.8rem;
+      margin: 0 0 10px;
+      text-align: center;
+      border-bottom: 5px solid;
+      padding-bottom: 15px;
+    }
+    .odd-category h2 {
+      color: var(--gold);
+      border-bottom-color: var(--green);
+    }
+    .even-category h2 {
+      color: var(--green);
+      border-bottom-color: var(--gold);
+    }
+    .subtitle {
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-align: center;
+      margin: 0 0 30px;
+      color: var(--text-muted);
+    }
+    .odd-category .subtitle { color: var(--green); }
+    .even-category .subtitle { color: var(--gold); }
+    .question {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 30px 0 15px;
+      color: var(--text-light);
+    }
+    .question-num {
+      color: var(--gold);
+      margin-right: 8px;
+    }
+    .odd-category .question-num { color: var(--green); }
+    .even-category .question-num { color: var(--gold); }
+    .help-btn {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+    .help-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+    .help-content {
+      display: none;
+      margin-top: 15px;
+      padding: 20px;
+      background: rgba(255,215,0,0.06);
+      border-left: 7px solid var(--gold);
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+    .odd-category .help-content { border-left-color: var(--gold); }
+    .even-category .help-content { border-left-color: var(--green); }
+    .help-content.visible {
+      display: block;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      background: #111;
+      color: var(--text-light);
+      border: 1px solid var(--green);
+      padding: 10px;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      resize: vertical;
+    }
+    .saved-msg {
+      color: var(--green);
+      font-weight: bold;
+      margin-left: 10px;
+      opacity: 0;
+      transition: opacity 0.5s;
+      font-size: 1rem;
+    }
+    .saved-msg.show {
+      opacity: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: #000;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 4.8rem; }
+      h2 { font-size: 2.4rem; }
+      .subtitle { font-size: 1.2rem; }
+      .question { font-size: 1.15rem; }
+      .category { padding: 30px; margin: 70px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Did You Know…</h1>
+    <div class="tagline">Truths We Love to Teach</div>
+    <a href="index.html" class="main-link">MAIN</a>
+  </header>
+
+  <main>
+
+    <div class="category odd-category">
+      <h2>The Future</h2>
+      <div class="subtitle">What the Bible Foretells</div>
+
+      <div class="question"><span class="question-num">1.</span> Current events and attitudes indicate a change is near?</div>
+      <button class="help-btn" onclick="toggleHelp('help1')">Help</button>
+      <div id="help1" class="help-content">Matt. 24:3, 7, 8; Luke 21:10, 11; 2 Tim. 3:1-5</div>
+      <textarea id="ans1" placeholder="Your thoughts..."></textarea>
+      <span id="saved1" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">2.</span> The earth will never be destroyed?</div>
+      <button class="help-btn" onclick="toggleHelp('help2')">Help</button>
+      <div id="help2" class="help-content">Ps. 104:5; Eccl. 1:4</div>
+      <textarea id="ans2" placeholder="Your thoughts..."></textarea>
+      <span id="saved2" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">3.</span> The earth’s environment will be restored?</div>
+      <button class="help-btn" onclick="toggleHelp('help3')">Help</button>
+      <div id="help3" class="help-content">Isa. 35:1, 2; Rev. 11:18</div>
+      <textarea id="ans3" placeholder="Your thoughts..."></textarea>
+      <span id="saved3" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">4.</span> Everyone will have perfect health?</div>
+      <button class="help-btn" onclick="toggleHelp('help4')">Help</button>
+      <div id="help4" class="help-content">Isa. 33:24; 35:5, 6</div>
+      <textarea id="ans4" placeholder="Your thoughts..."></textarea>
+      <span id="saved4" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">5.</span> You can live forever on earth?</div>
+      <button class="help-btn" onclick="toggleHelp('help5')">Help</button>
+      <div id="help5" class="help-content">Ps. 37:29; Matt. 5:5</div>
+      <textarea id="ans5" placeholder="Your thoughts..."></textarea>
+      <span id="saved5" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category even-category">
+      <h2>Family</h2>
+      <div class="subtitle">Happy Relationships</div>
+
+      <div class="question"><span class="question-num">6.</span> A husband should love his wife as he does himself?</div>
+      <button class="help-btn" onclick="toggleHelp('help6')">Help</button>
+      <div id="help6" class="help-content">Eph. 5:33; Col. 3:19</div>
+      <textarea id="ans6" placeholder="Your thoughts..."></textarea>
+      <span id="saved6" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">7.</span> A wife should deeply respect her husband?</div>
+      <button class="help-btn" onclick="toggleHelp('help7')">Help</button>
+      <div id="help7" class="help-content">Eph. 5:33; Col. 3:18</div>
+      <textarea id="ans7" placeholder="Your thoughts..."></textarea>
+      <span id="saved7" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">8.</span> A husband and wife should be loyal to each other?</div>
+      <button class="help-btn" onclick="toggleHelp('help8')">Help</button>
+      <div id="help8" class="help-content">Mal. 2:16; Matt. 19:4-6, 9; Heb. 13:4</div>
+      <textarea id="ans8" placeholder="Your thoughts..."></textarea>
+      <span id="saved8" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">9.</span> Children who respect and obey their parents will succeed?</div>
+      <button class="help-btn" onclick="toggleHelp('help9')">Help</button>
+      <div id="help9" class="help-content">Prov. 1:8, 9; Eph. 6:1-3</div>
+      <textarea id="ans9" placeholder="Your thoughts..."></textarea>
+      <span id="saved9" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category odd-category">
+      <h2>God</h2>
+      <div class="subtitle">Knowing the True God</div>
+
+      <div class="question"><span class="question-num">10.</span> God has a name?</div>
+      <button class="help-btn" onclick="toggleHelp('help10')">Help</button>
+      <div id="help10" class="help-content">Ps. 83:18; Jer. 10:10</div>
+      <textarea id="ans10" placeholder="Your thoughts..."></textarea>
+      <span id="saved10" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">11.</span> God communicates with us?</div>
+      <button class="help-btn" onclick="toggleHelp('help11')">Help</button>
+      <div id="help11" class="help-content">2 Tim. 3:16, 17; 2 Pet. 1:20, 21</div>
+      <textarea id="ans11" placeholder="Your thoughts..."></textarea>
+      <span id="saved11" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">12.</span> God is fair and unbiased?</div>
+      <button class="help-btn" onclick="toggleHelp('help12')">Help</button>
+      <div id="help12" class="help-content">Deut. 10:17; Acts 10:34, 35</div>
+      <textarea id="ans12" placeholder="Your thoughts..."></textarea>
+      <span id="saved12" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">13.</span> God wants to help us?</div>
+      <button class="help-btn" onclick="toggleHelp('help13')">Help</button>
+      <div id="help13" class="help-content">Ps. 46:1; 145:18, 19</div>
+      <textarea id="ans13" placeholder="Your thoughts..."></textarea>
+      <span id="saved13" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category even-category">
+      <h2>Prayer</h2>
+      <div class="subtitle">Drawing Close to God</div>
+
+      <div class="question"><span class="question-num">14.</span> God wants us to pray to him?</div>
+      <button class="help-btn" onclick="toggleHelp('help14')">Help</button>
+      <div id="help14" class="help-content">Ps. 62:8; 65:2; 1 Pet. 5:7</div>
+      <textarea id="ans14" placeholder="Your thoughts..."></textarea>
+      <span id="saved14" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">15.</span> The Bible teaches us how to pray?</div>
+      <button class="help-btn" onclick="toggleHelp('help15')">Help</button>
+      <div id="help15" class="help-content">Matt. 6:7-13; Luke 11:1-4</div>
+      <textarea id="ans15" placeholder="Your thoughts..."></textarea>
+      <span id="saved15" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">16.</span> We should pray often?</div>
+      <button class="help-btn" onclick="toggleHelp('help16')">Help</button>
+      <div id="help16" class="help-content">Matt. 7:7, 8; 1 Thess. 5:17</div>
+      <textarea id="ans16" placeholder="Your thoughts..."></textarea>
+      <span id="saved16" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category odd-category">
+      <h2>Jesus</h2>
+      <div class="subtitle">God's Son and Our Example</div>
+
+      <div class="question"><span class="question-num">17.</span> Jesus was a great teacher whose advice always works?</div>
+      <button class="help-btn" onclick="toggleHelp('help17')">Help</button>
+      <div id="help17" class="help-content">Matt. 6:14, 15, 34; 7:12</div>
+      <textarea id="ans17" placeholder="Your thoughts..."></textarea>
+      <span id="saved17" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">18.</span> Jesus foretold events we see today?</div>
+      <button class="help-btn" onclick="toggleHelp('help18')">Help</button>
+      <div id="help18" class="help-content">Matt. 24:3, 7, 8, 14; Luke 21:10, 11</div>
+      <textarea id="ans18" placeholder="Your thoughts..."></textarea>
+      <span id="saved18" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">19.</span> Jesus is God’s Son?</div>
+      <button class="help-btn" onclick="toggleHelp('help19')">Help</button>
+      <div id="help19" class="help-content">Matt. 16:16; John 3:16; 1 John 4:15</div>
+      <textarea id="ans19" placeholder="Your thoughts..."></textarea>
+      <span id="saved19" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">20.</span> Jesus is not God Almighty?</div>
+      <button class="help-btn" onclick="toggleHelp('help20')">Help</button>
+      <div id="help20" class="help-content">John 14:28; 1 Cor. 11:3</div>
+      <textarea id="ans20" placeholder="Your thoughts..."></textarea>
+      <span id="saved20" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category even-category">
+      <h2>God’s Kingdom</h2>
+      <div class="subtitle">The Real Government</div>
+
+      <div class="question"><span class="question-num">21.</span> God’s Kingdom is a real government in heaven?</div>
+      <button class="help-btn" onclick="toggleHelp('help21')">Help</button>
+      <div id="help21" class="help-content">Dan. 2:44; 7:13, 14; Matt. 6:9, 10; Rev. 11:15</div>
+      <textarea id="ans21" placeholder="Your thoughts..."></textarea>
+      <span id="saved21" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">22.</span> God’s Kingdom will replace human governments?</div>
+      <button class="help-btn" onclick="toggleHelp('help22')">Help</button>
+      <div id="help22" class="help-content">Ps. 2:7-9; Dan. 2:44</div>
+      <textarea id="ans22" placeholder="Your thoughts..."></textarea>
+      <span id="saved22" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">23.</span> God’s Kingdom is the only solution to mankind’s problems?</div>
+      <button class="help-btn" onclick="toggleHelp('help23')">Help</button>
+      <div id="help23" class="help-content">Ps. 37:10, 11; 46:9; Isa. 65:21-23</div>
+      <textarea id="ans23" placeholder="Your thoughts..."></textarea>
+      <span id="saved23" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category odd-category">
+      <h2>Suffering</h2>
+      <div class="subtitle">Why It Exists and God's View</div>
+
+      <div class="question"><span class="question-num">24.</span> God does not cause our suffering?</div>
+      <button class="help-btn" onclick="toggleHelp('help24')">Help</button>
+      <div id="help24" class="help-content">Deut. 32:4; Jas. 1:13</div>
+      <textarea id="ans24" placeholder="Your thoughts..."></textarea>
+      <span id="saved24" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">25.</span> Satan rules this world?</div>
+      <button class="help-btn" onclick="toggleHelp('help25')">Help</button>
+      <div id="help25" class="help-content">Luke 4:5, 6; 1 John 5:19</div>
+      <textarea id="ans25" placeholder="Your thoughts..."></textarea>
+      <span id="saved25" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">26.</span> God cares about your suffering?</div>
+      <button class="help-btn" onclick="toggleHelp('help26')">Help</button>
+      <div id="help26" class="help-content">Ps. 34:17-19; Isa. 41:10, 13</div>
+      <textarea id="ans26" placeholder="Your thoughts..."></textarea>
+      <span id="saved26" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">27.</span> God will soon end suffering?</div>
+      <button class="help-btn" onclick="toggleHelp('help27')">Help</button>
+      <div id="help27" class="help-content">Isa. 65:17; Rev. 21:3, 4</div>
+      <textarea id="ans27" placeholder="Your thoughts..."></textarea>
+      <span id="saved27" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category even-category">
+      <h2>Death</h2>
+      <div class="subtitle">The Bible's Hope</div>
+
+      <div class="question"><span class="question-num">28.</span> The dead are unconscious; they are not suffering?</div>
+      <button class="help-btn" onclick="toggleHelp('help28')">Help</button>
+      <div id="help28" class="help-content">Eccl. 9:5; John 11:11-14</div>
+      <textarea id="ans28" placeholder="Your thoughts..."></textarea>
+      <span id="saved28" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">29.</span> The dead cannot help us or harm us?</div>
+      <button class="help-btn" onclick="toggleHelp('help29')">Help</button>
+      <div id="help29" class="help-content">Ps. 146:4; Eccl. 9:6, 10</div>
+      <textarea id="ans29" placeholder="Your thoughts..."></textarea>
+      <span id="saved29" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">30.</span> Dead loved ones will be resurrected?</div>
+      <button class="help-btn" onclick="toggleHelp('help30')">Help</button>
+      <div id="help30" class="help-content">Job 14:13-15; John 5:28, 29; Acts 24:15</div>
+      <textarea id="ans30" placeholder="Your thoughts..."></textarea>
+      <span id="saved30" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">31.</span> “Death will be no more”?</div>
+      <button class="help-btn" onclick="toggleHelp('help31')">Help</button>
+      <div id="help31" class="help-content">Rev. 21:3, 4; Isa. 25:8</div>
+      <textarea id="ans31" placeholder="Your thoughts..."></textarea>
+      <span id="saved31" class="saved-msg">Saved!</span>
+    </div>
+
+    <hr class="separator">
+
+    <div class="category odd-category">
+      <h2>Religion</h2>
+      <div class="subtitle">Distinguishing True Worship</div>
+
+      <div class="question"><span class="question-num">32.</span> Not all religions please God?</div>
+      <button class="help-btn" onclick="toggleHelp('help32')">Help</button>
+      <div id="help32" class="help-content">Jer. 7:11; Matt. 7:13, 14, 21-23</div>
+      <textarea id="ans32" placeholder="Your thoughts..."></textarea>
+      <span id="saved32" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">33.</span> God hates hypocrisy?</div>
+      <button class="help-btn" onclick="toggleHelp('help33')">Help</button>
+      <div id="help33" class="help-content">Isa. 29:13; Mic. 3:11; Mark 7:6-8</div>
+      <textarea id="ans33" placeholder="Your thoughts..."></textarea>
+      <span id="saved33" class="saved-msg">Saved!</span>
+
+      <div class="question"><span class="question-num">34.</span> Genuine love identifies true religion?</div>
+      <button class="help-btn" onclick="toggleHelp('help34')">Help</button>
+      <div id="help34" class="help-content">Mic. 4:3; John 13:34, 35</div>
+      <textarea id="ans34" placeholder="Your thoughts..."></textarea>
+      <span id="saved34" class="saved-msg">Saved!</span>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Reflect on these truths and apply them in your life. Your answers are saved in your browser for future reference.</p>
+  </footer>
+
+  <script>
+    function toggleHelp(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('visible');
+    }
+
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach((ta, index) => {
+      const key = `bible-study-ans${index + 1}`;
+      ta.value = localStorage.getItem(key) || '';
+      ta.addEventListener('input', () => {
+        localStorage.setItem(key, ta.value);
+        const msg = document.getElementById(`saved${index + 1}`);
+        msg.classList.add('show');
+        setTimeout(() => msg.classList.remove('show'), 2000);
+      });
+    });
+
+    const elements = document.querySelectorAll('.category, h2, .subtitle, .question');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

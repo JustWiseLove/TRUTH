@@ -3,149 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JWL - Scrolls Reveal Truth</title>
+  <title>JWL - Unroll Through Scrolls - Sealed Truth Revealed</title>
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-dark: #0a0a0a;
-      --text-light: #d8d8d8;
-      --text-muted: #888;
-      --gold: #ffd700;
-      --green: #00aa00;
-      --section-odd-bg: rgba(0, 170, 0, 0.08);
-      --section-even-bg: rgba(255, 215, 0, 0.08);
-      --separator: rgba(255,215,0,0.15);
-    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
       line-height: 1.6;
     }
     header {
-      background: #000;
-      color: var(--gold);
+      background-color: #333;
+      padding: 40px 20px;
       text-align: center;
-      padding: 140px 20px 90px;
+      color: #fff;
     }
-    h1 {
-      font-family: 'Audiowide', cursive;
-      font-size: 7.5rem;
+    .logo h1 {
       margin: 0;
-      letter-spacing: 10px;
-      text-shadow: 0 0 20px rgba(255,215,0,0.4);
+      font-family: 'Audiowide', cursive;
+      font-size: 5rem;
+      letter-spacing: 6px;
+      color: #fff;
+    }
+    .logo a {
+      text-decoration: none;
+      color: #fff;
     }
     .tagline {
-      font-size: 2.2rem;
-      margin-top: 20px;
-      color: var(--green);
+      font-size: 1.8rem;
+      margin: 15px 0 25px;
+      color: #ddd;
     }
-    .study-link {
-      display: block;
-      margin: 30px auto 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--green);
+    .nav-links {
+      margin-top: 10px;
+      font-size: 1.4rem;
+    }
+    .nav-links a {
+      color: #ccc;
       text-decoration: none;
-      text-align: center;
+      margin: 0 25px;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    .study-link:hover {
-      color: var(--gold);
+    .nav-links a:hover {
+      color: #fff;
     }
     main {
       max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
     section {
-      margin: 100px 0;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      background-color: #fff;
+      padding: 35px;
+      margin-bottom: 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      opacity: 0.92;
+      transform: translateY(20px);
+      transition: opacity 1.4s ease-out, transform 1.4s ease-out;
     }
-    .odd-section {
-      background: var(--section-odd-bg);
-    }
-    .even-section {
-      background: var(--section-even-bg);
-    }
-    hr.separator {
-      border: none;
-      height: 2px;
-      margin: 80px auto;
-      width: 60%;
-      background: linear-gradient(to right, transparent, var(--separator), transparent);
-    }
-    .odd-section hr.separator { background: linear-gradient(to right, transparent, var(--green), transparent); }
-    .even-section hr.separator { background: linear-gradient(to right, transparent, var(--gold), transparent); }
-    h2 {
-      font-size: 2.8rem;
-      margin: 0 0 10px;
-      text-align: center;
-      border-bottom: 5px solid;
-      padding-bottom: 15px;
-      opacity: 0;
-      transform: translateY(40px) scale(0.95);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-    .odd-section h2 {
-      color: var(--gold);
-      border-bottom-color: var(--green);
-    }
-    .even-section h2 {
-      color: var(--green);
-      border-bottom-color: var(--gold);
-    }
-    h2.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    .subtitle {
-      font-size: 1.4rem;
-      font-weight: 400;
-      text-align: center;
-      margin: 0 0 30px;
-      color: var(--text-muted);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-    }
-    .subtitle.visible {
+    section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .odd-section .subtitle { color: var(--green); }
-    .even-section .subtitle { color: var(--gold); }
-    .reveal-item, .explanation {
+    .odd-section {
+      background-color: #f9fff9; /* very light green */
+    }
+    .even-section {
+      background-color: #fffef5; /* very light gold */
+    }
+    h2 {
+      font-size: 2.4rem;
+      margin: 0 0 20px;
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 12px;
+    }
+    .odd-section h2 {
+      color: #006600; /* green */
+    }
+    .even-section h2 {
+      color: #b8860b; /* gold */
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    .odd-section .subtitle {
+      color: #006600;
+    }
+    .even-section .subtitle {
+      color: #b8860b;
+    }
+    .reveal-item, .explanation, .scripture {
       opacity: 0;
-      transform: translateY(60px) scale(0.9);
-      transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      margin-bottom: 50px;
-      font-weight: 600;
-      font-size: 1.25rem;
+      transform: translateY(40px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+      margin-bottom: 35px;
     }
-    .reveal-item.visible, .explanation.visible {
+    .reveal-item.visible, .explanation.visible, .scripture.visible {
       opacity: 1;
-      transform: translateY(0) scale(1.15);
+      transform: translateY(0);
     }
-    .reveal-item.visible.settled, .explanation.visible.settled {
-      transform: translateY(0) scale(1);
+    .reveal-item {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #444;
+    }
+    .explanation {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #444;
     }
     .scripture {
       font-style: italic;
       padding: 25px 30px;
-      border-left: 7px solid;
-      background: rgba(255,215,0,0.06);
-      margin: 35px 0;
-      font-weight: 700;
-      font-size: 1.35rem;
+      border-left: 6px solid;
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: #333;
+      border-radius: 0 8px 8px 0;
     }
     .odd-section .scripture {
-      border-left-color: var(--gold);
+      border-left-color: #006600;
+      background-color: #f9fff9;
     }
     .even-section .scripture {
-      border-left-color: var(--green);
+      border-left-color: #b8860b;
+      background-color: #fffef5;
     }
     .scripture .verse {
       display: block;
@@ -153,54 +143,76 @@
       font-weight: bold;
       font-size: 1.1rem;
     }
-    .odd-section .scripture .verse { color: var(--green); }
-    .even-section .scripture .verse { color: var(--gold); }
+    .odd-section .scripture .verse {
+      color: #006600;
+    }
+    .even-section .scripture .verse {
+      color: #b8860b;
+    }
     .conclusion {
       font-style: italic;
-      color: var(--text-muted);
-      margin-top: 50px;
-      font-size: 1.25rem;
+      color: #555;
+      margin-top: 40px;
+      font-size: 1.2rem;
       padding: 20px;
-      border-top: 3px solid;
+      border-top: 2px solid #ddd;
     }
-    .odd-section .conclusion { border-top-color: var(--green); }
-    .even-section .conclusion { border-top-color: var(--gold); }
+    .odd-section .conclusion {
+      border-top-color: #006600;
+    }
+    .even-section .conclusion {
+      border-top-color: #b8860b;
+    }
+    .study-link {
+      display: block;
+      margin: 40px auto 0;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      padding: 12px 30px;
+      border: 2px solid #6a0dad;
+      border-radius: 8px;
+      max-width: 300px;
+      color: #6a0dad;
+      transition: all 0.3s ease;
+    }
+    .study-link:hover {
+      background-color: #6a0dad;
+      color: white;
+    }
     footer {
       text-align: center;
-      padding: 50px 20px;
-      background: #000;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-    footer a {
-      color: var(--green);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer a:hover {
-      color: var(--gold);
+      padding: 40px 20px;
+      background-color: #333;
+      color: #ccc;
+      font-size: 1rem;
+      margin-top: 60px;
     }
     @media (max-width: 600px) {
-      h1 { font-size: 4.8rem; }
-      h2 { font-size: 2.4rem; }
-      .subtitle { font-size: 1.2rem; }
-      .reveal-item, .explanation { font-size: 1.15rem; }
-      section { padding: 30px; margin: 70px 0; }
+      .logo h1 { font-size: 3.5rem; }
+      h2 { font-size: 2rem; }
+      .reveal-item, .explanation, .scripture { font-size: 1.15rem; }
+      section { padding: 25px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>JWL</h1>
-    <div class="tagline">Scrolls Reveal Truth</div>
-    <a href="family.html" class="study-link">Family Worship</a>
-    <a href="truth.html" class="study-link">Q&A</a>
+    <div class="logo">
+      <h1><a href="#">JWL</a></h1>
+    </div>
+    <div class="tagline">Unroll Through Scrolls - Sealed Truth Revealed</div>
+    <div class="nav-links">
+      <a href="truth.html">Truth</a>
+      <a href="family.html">Family Worship</a>
+    </div>
   </header>
 
   <main>
 
-    <section id="creation" class="odd-section">
+    <section class="odd-section">
       <h2>Creation</h2>
       <div class="subtitle">Jehovah's Grand Work</div>
       <div class="reveal-item">Jehovah God is the Creator who brought the heavens, earth, and all life into existence in an orderly way over six creative periods, preparing a beautiful home for mankind.</div>
@@ -208,12 +220,10 @@
       <div class="reveal-item explanation">This shows Jehovah as the Source of all things, using His power to form everything from nothing material preexisting.</div>
       <div class="scripture">“You are worthy, Jehovah our God, to receive the glory and the honor and the power, because you created all things, and because of your will they came into existence and were created.” <span class="verse">— Revelation 4:11</span></div>
       <div class="reveal-item explanation">Living things were made “according to their kinds,” with no room for one kind changing into another over time.</div>
-      <div class="conclusion">Even many who accept evolution admit that life’s immense complexity—from the first cell to DNA’s information code—points to an intelligent starting point or designer, as blind chance cannot produce such order.</div>
+      <div class="conclusion">Even many who accept evolution admit that life’s immense complexity—from the first cell to DNA’s information code—points to an intelligent starting point or designer, as blind chance cannot produce such order. Yet theories requiring a “first cell” or guided process still fail, because the Bible shows Jehovah directly created basic kinds as perfect, with life coming only from pre-existing life (Himself as the Source). Evolution denies this direct creation, ignores the lack of transitional fossils for macro changes, and attributes design to materialism rather than Jehovah’s evident power and wisdom seen in all things made (as Scriptures confirm design requires a Designer).</div>
     </section>
 
-    <hr class="separator">
-
-    <section id="jehovah" class="even-section">
+    <section class="even-section">
       <h2>God's Name</h2>
       <div class="subtitle">Jehovah</div>
       <div class="reveal-item">Jehovah is the personal name of the true God, the Creator, who invites us to know and use His name.</div>
@@ -224,9 +234,7 @@
       <div class="conclusion">Teachings that ignore or replace God's name are incorrect, as the Bible stresses calling on Jehovah in truth and using His personal name to draw close to Him.</div>
     </section>
 
-    <hr class="separator">
-
-    <section id="bible-translation" class="odd-section">
+    <section class="odd-section">
       <h2>Bible Translation</h2>
       <div class="subtitle">The New World Translation</div>
       <div class="reveal-item">The New World Translation restores God's name and uses accurate, modern language based on the oldest manuscripts.</div>
@@ -237,9 +245,7 @@
       <div class="conclusion">Translations that remove God's name or alter key teachings are incorrect, as they obscure Jehovah's identity and the Bible's inspired message.</div>
     </section>
 
-    <hr class="separator">
-
-    <section id="jesus" class="even-section">
+    <section class="even-section">
       <h2>Jesus Christ</h2>
       <div class="subtitle">God's Son</div>
       <div class="reveal-item">Jesus is the only-begotten Son of God, the firstborn of creation, sent to fulfill Jehovah's purpose.</div>
@@ -250,9 +256,7 @@
       <div class="conclusion">The Trinity teaching is incorrect, as it contradicts Scriptures showing Jehovah as the only true God and Jesus as His subordinate Son and mediator.</div>
     </section>
 
-    <hr class="separator">
-
-    <section id="ransom" class="odd-section">
+    <section class="odd-section">
       <h2>The Ransom</h2>
       <div class="subtitle">Jesus' Sacrifice</div>
       <div class="reveal-item">Jesus gave his perfect human life as a ransom to free mankind from sin and death inherited from Adam.</div>
@@ -263,9 +267,7 @@
       <div class="conclusion">Teachings of eternal torment or immortal soul are incorrect, as the ransom shows death as the penalty for sin, with resurrection as the hope through Jesus.</div>
     </section>
 
-    <hr class="separator">
-
-    <section id="kingdom" class="even-section">
+    <section class="even-section">
       <h2>God's Kingdom</h2>
       <div class="subtitle">A Real Government</div>
       <div class="reveal-item">God's Kingdom is a heavenly government with Jesus as King, set up to rule the earth and fulfill Jehovah's original purpose.</div>
@@ -276,9 +278,7 @@
       <div class="conclusion">Human governments or ideas of an earthly paradise without God's rule are incorrect, as only Jehovah's Kingdom will bring lasting peace and restore Eden-like conditions.</div>
     </section>
 
-    <hr class="separator">
-
-    <section id="false-religion" class="odd-section">
+    <section class="odd-section">
       <h2>False Religion</h2>
       <div class="subtitle">Distinguishing Truth</div>
       <div class="reveal-item">False religion misrepresents Jehovah with teachings not based on Scripture, leading people away from true worship.</div>
@@ -289,33 +289,47 @@
       <div class="conclusion">All forms of false worship are incorrect because they violate Jehovah's standards, ignore His name and purpose, and fail to lead to everlasting life—only true worship based on Scripture draws close to God.</div>
     </section>
 
+    <a href="truth.html" class="study-link">Start Bible Study →</a>
+
   </main>
 
   <footer>
-    <p>Read more and start an interactive Q&A→ <a href="truth.html">Go to the Q&A</a></p>
+    <p>© 2025–2026 Just Wise Love</p>
   </footer>
 
   <script>
-    const items = document.querySelectorAll('.reveal-item, .explanation, h2, .subtitle');
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll appear/disappear for sections + individual children
+    const sections = document.querySelectorAll('section');
+    const children = document.querySelectorAll('.reveal-item, .explanation, .scripture');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          setTimeout(() => {
-            if (entry.target.classList.contains('visible')) {
-              entry.target.classList.add('settled');
-            }
-          }, 800);
         } else {
-          entry.target.classList.remove('visible', 'settled');
+          entry.target.classList.remove('visible');
         }
       });
     }, {
-      threshold: [0.1, 0.9],
-      rootMargin: '-10% 0px -20% 0px'
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px"
     });
 
-    items.forEach(item => observer.observe(item));
+    const childObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: "0px 0px -15% 0px"
+    });
+
+    sections.forEach(sec => sectionObserver.observe(sec));
+    children.forEach(child => childObserver.observe(child));
   </script>
 
 </body>

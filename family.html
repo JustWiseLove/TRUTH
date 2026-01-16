@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWL - Family Worship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .logo h1 {
+            margin: 0;
+            font-family: 'Audiowide', cursive;
+            font-size: 4rem;
+            color: #fff;
+            letter-spacing: 4px;
+        }
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+        main {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .intro {
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .intro h2 {
+            color: #444;
+            margin-bottom: 20px;
+        }
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .weekly-truth {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .weekly-truth h2 {
+            color: #444;
+            margin-bottom: 15px;
+        }
+        #current-topic {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #222;
+        }
+        .unit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .unit details {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .unit summary {
+            padding: 20px 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #222;
+            background-color: #e8e8e8;
+            cursor: pointer;
+            user-select: none;
+        }
+        .unit summary:hover {
+            background-color: #ddd;
+        }
+        .unit .unit-content {
+            padding: 20px 30px;
+            line-height: 1.6;
+            color: #444;
+        }
+        .unit h3 {
+            margin: 15px 0 8px;
+            color: #111;
+            font-size: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #333;
+            color: #ccc;
+            margin-top: 60px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="#">JWL</a></h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="intro-content">
+                <h2>Family Worship</h2>
+                <p>Each week, we explore distinct study topics, updated every Saturday for the upcoming Friday, to strengthen our faith and equip us with scriptural truth. These lessons, rooted in the Bible, guide our families to live for Jehovah’s Kingdom, preparing for eternal life in paradise (John 17:3). Engage in heartfelt discussions to deepen your love for Jehovah and His standards.</p>
+            </div>
+        </section>
+
+        <div class="weekly-truth" id="weekly-topic">
+            <h2>Next Week's Topics</h2>
+            <p id="current-topic">Loading...</p>
+        </div>
+
+        <div class="unit-list">
+            <details class="unit">
+                <summary class="unit-button">December 12, 2025</summary>
+                <div class="unit-content">
+                    <h3>In the Beginning (Genesis 1:1) – Lesson 1</h3>
+                    <h3>Evolution</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">December 19, 2025</summary>
+                <div class="unit-content">
+                    <h3>Adam and Eve (Genesis 1:27) – Lesson 2</h3>
+                    <h3>Fate / Hell / Lies</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">December 26, 2025</summary>
+                <div class="unit-content">
+                    <h3>New Year’s</h3>
+                    <h3>Goals</h3>
+                    <h3>Change</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">January 2, 2026</summary>
+                <div class="unit-content">
+                    <h3>Cain & Abel (Gen 4) – Lesson 4</h3>
+                    <h3>Reincarnation</h3>
+                    <h3>Faith</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">January 9, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">January 16, 2026</summary>
+                <div class="unit-content">
+                    <h3>Noah (Gen 6) – Lesson 5</h3>
+                    <h3>Endurance</h3>
+                    <h3>Preaching</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">January 23, 2026</summary>
+                <div class="unit-content">
+                    <h3>Babel (Gen 11) – Lesson 7</h3>
+                    <h3>Pride</h3>
+                    <h3>Humility</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">January 30, 2026</summary>
+                <div class="unit-content">
+                    <h3>Valentine’s Day</h3>
+                    <h3>Marriage</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">February 6, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">February 13, 2026</summary>
+                <div class="unit-content">
+                    <h3>Lot (Gen 13) – Lesson 10</h3>
+                    <h3>Immortality</h3>
+                    <h3>Homosexuality</h3>
+                    <h3>Obedience</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">February 20, 2026</summary>
+                <div class="unit-content">
+                    <h3>Jacob & Esau (Gen 25) – Lesson 12</h3>
+                    <h3>Content</h3>
+                    <h3>Thankful</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">February 27, 2026</summary>
+                <div class="unit-content">
+                    <h3>Moses (Ex 2) – Lesson 17</h3>
+                    <h3>God’s Name</h3>
+                    <h3>Trinity</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">March 6, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">March 13, 2026</summary>
+                <div class="unit-content">
+                    <h3>St. Patrick’s Day</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">March 20, 2026</summary>
+                <div class="unit-content">
+                    <h3>Ezekiel Vision (Ezek 1)</h3>
+                    <h3>Purgatory</h3>
+                    <h3>Rapture</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">March 27, 2026</summary>
+                <div class="unit-content">
+                    <h3>Gog of Magog (Ezek 38)</h3>
+                    <h3>False Teachings</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">April 3, 2026</summary>
+                <div class="unit-content">
+                    <h3>Jesus’ Last Supper – Lesson 87</h3>
+                    <h3>Memorial</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">April 10, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">April 17, 2026</summary>
+                <div class="unit-content">
+                    <h3>Jesus’ Resurrection – Lesson 91</h3>
+                    <h3>Easter</h3>
+                    <h3>Mass</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">April 24, 2026</summary>
+                <div class="unit-content">
+                    <h3>Jesus Returns to Heaven (Acts 1) – Lesson 93</h3>
+                    <h3>Rapture</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">May 1, 2026</summary>
+                <div class="unit-content">
+                    <h3>Jonah (Jonah 1) – Lesson 54</h3>
+                    <h3>Compassion</h3>
+                    <h3>Hades</h3>
+                    <h3>Gehenna</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">May 8, 2026</summary>
+                <div class="unit-content">
+                    <h3>Mother’s Day</h3>
+                    <h3>Honor</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">May 15, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">May 22, 2026</summary>
+                <div class="unit-content">
+                    <h3>Memorial Day</h3>
+                    <h3>Unity</h3>
+                    <h3>War</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">May 29, 2026</summary>
+                <div class="unit-content">
+                    <h3>Josiah Loved God’s Law – Lesson 56</h3>
+                    <h3>Idolatry</h3>
+                    <h3>Family Opposition</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">June 5, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">June 12, 2026</summary>
+                <div class="unit-content">
+                    <h3>Father’s Day</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">June 19, 2026</summary>
+                <div class="unit-content">
+                    <h3>Nebuchadnezzar’s Dream (Dan 2) – Lesson 60</h3>
+                    <h3>God’s Kingdom</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">June 26, 2026</summary>
+                <div class="unit-content">
+                    <h3>4th of July</h3>
+                    <h3>Nationalism</h3>
+                    <h3>Neutrality</h3>
+                    <h3>Love of Neighbor</h3>
+                    <h3>Love of Enemy</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">July 10, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">July 17, 2026</summary>
+                <div class="unit-content">
+                    <h3>1914 (Dan 4)</h3>
+                    <h3>Heaven</h3>
+                    <h3>144,000</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">July 24, 2026</summary>
+                <div class="unit-content">
+                    <h3>Daniel in the Lions’ Den (Dan 6) – Lesson 64</h3>
+                    <h3>Courage</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">July 31, 2026</summary>
+                <div class="unit-content">
+                    <h3>Nehemiah</h3>
+                    <h3>Faith</h3>
+                    <h3>Drifting Away From Jehovah</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">August 7, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">August 14, 2026</summary>
+                <div class="unit-content">
+                    <h3>Paul & Timothy Educated Men (Acts 17)</h3>
+                    <h3>Philosophy</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">August 21, 2026</summary>
+                <div class="unit-content">
+                    <h3>Paul & Timothy (Acts 16) – Lesson 100</h3>
+                    <h3>Youth</h3>
+                    <h3>Make It Your Own</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">August 28, 2026</summary>
+                <div class="unit-content">
+                    <h3>Labor Day</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">September 4, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">September 11, 2026</summary>
+                <div class="unit-content">
+                    <h3>Four Horsemen (Rev 6)</h3>
+                    <h3>What Do You Look Forward To?</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">September 18, 2026</summary>
+                <div class="unit-content">
+                    <h3>666 (Rev 13)</h3>
+                    <h3>Numerology</h3>
+                    <h3>Spiritism</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">September 25, 2026</summary>
+                <div class="unit-content">
+                    <h3>The Great Prostitute (Rev 17)</h3>
+                    <h3>False Religion</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">October 2, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">October 9, 2026</summary>
+                <div class="unit-content">
+                    <h3>Fruitage of the Spirit</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">October 16, 2026</summary>
+                <div class="unit-content">
+                    <h3>Halloween</h3>
+                    <h3>Spirit of the Flesh</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">October 23, 2026</summary>
+                <div class="unit-content">
+                    <h3>Suit of Armor (Eph 6)</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">October 30, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">November 6, 2026</summary>
+                <div class="unit-content">
+                    <h3>Your Word Is Truth</h3>
+                    <h3>Consequences</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">November 13, 2026</summary>
+                <div class="unit-content">
+                    <h3>Thanksgiving</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">November 20, 2026</summary>
+                <div class="unit-content">
+                    <h3>Birth of Jesus (Luke 2) – Lesson 70</h3>
+                    <h3>Christmas / Advent</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">November 27, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">December 4, 2026</summary>
+                <div class="unit-content">
+                    <h3>In the Beginning (Gen 1:1) – Lesson 1</h3>
+                    <h3>Evolution</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">December 11, 2026</summary>
+                <div class="unit-content">
+                    <h3>Adam and Eve (Gen 1:27) – Lesson 2</h3>
+                    <h3>Fate / Hell / Lies</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">December 18, 2026</summary>
+                <div class="unit-content">
+                    <h3>New Year’s</h3>
+                    <h3>Goals</h3>
+                    <h3>Change</h3>
+                </div>
+            </details>
+
+            <details class="unit">
+                <summary class="unit-button">December 25, 2026</summary>
+                <div class="unit-content">
+                    <h3>Broadcast</h3>
+                </div>
+            </details>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025–2026 Just Wise Love</p>
+    </footer>
+
+    <script>
+        // Schedule (every Friday assigned, no gaps)
+        const schedule = [
+            { date: "December 12, 2025", topics: ["In the Beginning (Genesis 1:1) – Lesson 1", "Evolution"] },
+            { date: "December 19, 2025", topics: ["Adam and Eve (Genesis 1:27) – Lesson 2", "Fate / Hell / Lies"] },
+            { date: "December 26, 2025", topics: ["New Year’s", "Goals", "Change"] },
+            { date: "January 2, 2026", topics: ["Cain & Abel (Gen 4) – Lesson 4", "Reincarnation", "Faith"] },
+            { date: "January 9, 2026", topics: ["Broadcast"] },
+            { date: "January 16, 2026", topics: ["Noah (Gen 6) – Lesson 5", "Endurance", "Preaching"] },
+            { date: "January 23, 2026", topics: ["Babel (Gen 11) – Lesson 7", "Pride", "Humility"] },
+            { date: "January 30, 2026", topics: ["Valentine’s Day", "Marriage"] },
+            { date: "February 6, 2026", topics: ["Broadcast"] },
+            { date: "February 13, 2026", topics: ["Lot (Gen 13) – Lesson 10", "Immortality", "Homosexuality", "Obedience"] },
+            { date: "February 20, 2026", topics: ["Jacob & Esau (Gen 25) – Lesson 12", "Content", "Thankful"] },
+            { date: "February 27, 2026", topics: ["Moses (Ex 2) – Lesson 17", "God’s Name", "Trinity"] },
+            { date: "March 6, 2026", topics: ["Broadcast"] },
+            { date: "March 13, 2026", topics: ["St. Patrick’s Day"] },
+            { date: "March 20, 2026", topics: ["Ezekiel Vision (Ezek 1)", "Purgatory", "Rapture"] },
+            { date: "March 27, 2026", topics: ["Gog of Magog (Ezek 38)", "False Teachings"] },
+            { date: "April 3, 2026", topics: ["Jesus’ Last Supper – Lesson 87", "Memorial"] },
+            { date: "April 10, 2026", topics: ["Broadcast"] },
+            { date: "April 17, 2026", topics: ["Jesus’ Resurrection – Lesson 91", "Easter", "Mass"] },
+            { date: "April 24, 2026", topics: ["Jesus Returns to Heaven (Acts 1) – Lesson 93", "Rapture"] },
+            { date: "May 1, 2026", topics: ["Jonah (Jonah 1) – Lesson 54", "Compassion", "Hades", "Gehenna"] },
+            { date: "May 8, 2026", topics: ["Mother’s Day", "Honor"] },
+            { date: "May 15, 2026", topics: ["Broadcast"] },
+            { date: "May 22, 2026", topics: ["Memorial Day", "Unity", "War"] },
+            { date: "May 29, 2026", topics: ["Josiah Loved God’s Law – Lesson 56", "Idolatry", "Family Opposition"] },
+            { date: "June 5, 2026", topics: ["Broadcast"] },
+            { date: "June 12, 2026", topics: ["Father’s Day"] },
+            { date: "June 19, 2026", topics: ["Nebuchadnezzar’s Dream (Dan 2) – Lesson 60", "God’s Kingdom"] },
+            { date: "June 26, 2026", topics: ["4th of July", "Nationalism", "Neutrality", "Love of Neighbor", "Love of Enemy"] },
+            { date: "July 3, 2026", topics: ["1914 (Dan 4)", "Heaven", "144,000"] },
+            { date: "July 10, 2026", topics: ["Broadcast"] },
+            { date: "July 17, 2026", topics: ["Daniel in the Lions’ Den (Dan 6) – Lesson 64", "Courage"] },
+            { date: "July 24, 2026", topics: ["Nehemiah", "Faith", "Drifting Away From Jehovah"] },
+            { date: "July 31, 2026", topics: ["Paul & Timothy Educated Men (Acts 17)", "Philosophy"] },
+            { date: "August 7, 2026", topics: ["Broadcast"] },
+            { date: "August 14, 2026", topics: ["Paul & Timothy (Acts 16) – Lesson 100", "Youth", "Make It Your Own"] },
+            { date: "August 21, 2026", topics: ["Labor Day"] },
+            { date: "August 28, 2026", topics: ["Broadcast"] },
+            { date: "September 4, 2026", topics: ["Four Horsemen (Rev 6)", "What Do You Look Forward To?"] },
+            { date: "September 11, 2026", topics: ["666 (Rev 13)", "Numerology", "Spiritism"] },
+            { date: "September 18, 2026", topics: ["The Great Prostitute (Rev 17)", "False Religion"] },
+            { date: "September 25, 2026", topics: ["New Jerusalem (Rev 21)", "Paradise"] },
+            { date: "October 2, 2026", topics: ["Broadcast"] },
+            { date: "October 9, 2026", topics: ["Fruitage of the Spirit"] },
+            { date: "October 16, 2026", topics: ["Halloween", "Spirit of the Flesh"] },
+            { date: "October 23, 2026", topics: ["Suit of Armor (Eph 6)"] },
+            { date: "October 30, 2026", topics: ["Broadcast"] },
+            { date: "November 6, 2026", topics: ["Your Word Is Truth", "Consequences"] },
+            { date: "November 13, 2026", topics: ["Thanksgiving"] },
+            { date: "November 20, 2026", topics: ["Birth of Jesus (Luke 2) – Lesson 70", "Christmas / Advent"] },
+            { date: "November 27, 2026", topics: ["Broadcast"] },
+            { date: "December 4, 2026", topics: ["In the Beginning (Gen 1:1) – Lesson 1", "Evolution"] },
+            { date: "December 11, 2026", topics: ["Adam and Eve (Gen 1:27) – Lesson 2", "Fate / Hell / Lies"] },
+            { date: "December 18, 2026", topics: ["New Year’s", "Goals", "Change"] },
+            { date: "December 25, 2026", topics: ["Broadcast"] }
+        ];
+
+        // Current Friday logic - shows current week's topics until Saturday midnight EST
+        function getCurrentFridayEST() {
+            const now = new Date();
+            const isDST = now.getMonth() > 2 && now.getMonth() < 10;
+            const offset = isDST ? -4 : -5;
+            const easternNow = new Date(now.getTime() + offset * 3600000);
+            const day = easternNow.getDay();
+
+            let daysToFriday = day - 5;
+            if (daysToFriday > 0) daysToFriday -= 7; // If after Friday, previous Friday
+            if (day === 6) daysToFriday = -1; // Saturday before midnight, keep previous Friday
+
+            const currentFriday = new Date(easternNow);
+            currentFriday.setDate(easternNow.getDate() + daysToFriday);
+            currentFriday.setHours(0, 0, 0, 0);
+            return currentFriday;
+        }
+
+        function updateTopic() {
+            const currentFriday = getCurrentFridayEST();
+            let topicText = "Enjoy your family worship!";
+
+            for (const entry of schedule) {
+                const [monthName, dayStr, year] = entry.date.split(' ');
+                const month = ["January","February","March","April","May","June","July","August","September","October","November","December"].indexOf(monthName);
+                const day = parseInt(dayStr.replace(',', ''));
+                const entryDate = new Date(year, month, day);
+                entryDate.setHours(0, 0, 0, 0);
+
+                if (entryDate.getTime() === currentFriday.getTime()) {
+                    topicText = entry.topics.join(" • ");
+                    break;
+                }
+            }
+
+            document.getElementById("current-topic").textContent = topicText;
+        }
+
+        updateTopic();
+        setInterval(updateTopic, 60000); // Check every minute for midnight switch
+    </script>
+</body>
+</html>
